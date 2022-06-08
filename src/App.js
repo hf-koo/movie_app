@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 
 // 5940904c
 
 const API_URL = "http://www.omdbapi.com?apikey=5940904c";
+
+const movie1 = {};
 
 function App() {
   const searchMovies = async (title) => {
@@ -19,8 +22,20 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <h1>APP </h1>
+    <div className="app">
+      <h1>MovieLand</h1>
+      <div className="search">
+        <input
+          placeholder="Search for movies"
+          value="Superman"
+          onChange={() => {}}
+        />
+        <img src={SearchIcon} alt="search" onClick={() => {}} />
+      </div>
+
+      <div className="container">
+        <MovieCard />
+      </div>
     </div>
   );
 }
